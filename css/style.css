@@ -73,10 +73,51 @@ section {
     font-size: 2rem;
     cursor: pointer;
     padding: 1rem 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    border: 1px solid transparent;
 }
+.btn-get{
+    margin-top: 1rem;
+    display: inline-block;
+    background: var(--peru);
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 1rem 3rem;
+}
+.btn::after{
+    content:'';
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background:var(--white);
+    transition:width 0.5s ease-in-out;
+    z-index: 0;
 
-.btn:hover {
+}
+.btn-get{
+    position: relative;
+    z-index: 1;
+}
+.btn-get:hover{
     letter-spacing: .2rem;
+    
+}
+.btn:hover{
+    color:var(--peru);
+    border:1px solid var(--peru);
+}
+.btn span{
+    position: relative;
+    z-index: 1;
+}
+.btn:hover:after {
+    left:0;
+    width: 100%;
 }
 
 .header {
